@@ -10,6 +10,11 @@ class MainPageLocatars(object):
   SEARCH        = (By.ID, 'twotabsearchtextbox')
   SEARCH_LIST   = (By.ID, 's-results-list-atf')
 
+  # added
+  search_btn    = (By.ID, 'su')
+  search_txt    = (By.ID, 'kw')
+  search_result = (By.ID, 'content_left')
+
 class LoginPageLocatars(object):
   EMAIL         = (By.ID, 'ap_email')
   PASSWORD      = (By.ID, 'ap_password')

@@ -15,12 +15,13 @@ class MainPage(Page):
         super().__init__(driver)  # Python3 version
 
     def check_page_loaded(self):
-        return True if self.find_element(*self.locator.LOGO) else False
+        self.wait_page_load_done()
+        return True if self.find_element(*self.locator.search_btn) else False
 
     def search_item(self, item):
-        self.find_element(*self.locator.SEARCH).send_keys(item)
-        self.find_element(*self.locator.SEARCH).send_keys(Keys.ENTER)
-        return self.find_element(*self.locator.SEARCH_LIST).text
+        self.find_element(*self.locator.search_txt).send_keys(item)
+        self.find_element(*self.locator.search_txt).send_keys(Keys.ENTER)
+        return self.find_element(*self.locator.search_result).text
         
     def click_sign_up_button(self):
         self.hover(*self.locator.ACCOUNT)
